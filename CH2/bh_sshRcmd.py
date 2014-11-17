@@ -20,4 +20,4 @@ def ssh_command(ip, user, passwd, command):
                 ssh_session.send(str(e))
         client.close()
     return
-ssh_command('192.168.0.3', 'game', 'rerebug1', 'ClientConnected')
+ssh_command('192.168.0.12', 'user', 'pass', 'ClientConnected')
