@@ -20,8 +20,8 @@ task_queue = Queue.Queue()
 
 
 def connect_to_github():
-    gh = login(username="joshfokis", password="rerebug1")
-    repo = gh.repository("joshfokis", "Blackhat-Python/CH7")
+    gh = login(username="username", password="password")
+    repo = gh.repository("username", "directory")
     branch = repo.branch("master")
 
     return gh, repo, branch
